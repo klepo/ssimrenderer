@@ -1,0 +1,37 @@
+<RCC>
+    <qresource prefix="/">
+        <file alias="vertexshaderDensity">../src/rendering/shaders/vertexshaderdensity.vert</file>
+        <file alias="geometryshaderDensity">../src/rendering/shaders/geometryshaderdensity.geom</file>
+
+        <file alias="vertexshaderSilhouettes">../src/rendering/shaders/vertexshadersilhouettes.vert</file>
+        <file alias="geometryshaderSilhouettes">../src/rendering/shaders/geometryshadersilhouettes.geom</file>
+        <file alias="fragmentshaderSilhouettes">../src/rendering/shaders/fragmentshadersilhouettes.frag</file>
+
+        <file alias="vertexshaderComputing">../src/rendering/shaders/vertexshadercomputing.vert</file>
+        <file alias="fragmentshaderComputing">../src/rendering/shaders/fragmentshadercomputing.frag</file>
+
+        <file alias="vertexshaderPyramid">../src/rendering/shaders/vertexshaderpyramid.vert</file>
+        <file alias="fragmentshaderPyramid">../src/rendering/shaders/fragmentshaderpyramid.frag</file>
+
+        <file alias="vertexshaderPolygonal">../src/rendering/shaders/vertexshaderpolygonal.vert</file>
+        <!--<file alias="geometryshaderPolygonal">../src/rendering/shaders/geometryshaderpolygonal.geom</file>!-->
+        <file alias="fragmentshaderPolygonal">../src/rendering/shaders/fragmentshaderpolygonal.frag</file>
+
+        <file alias="vertexshaderPostprocessing">../src/rendering/shaders/vertexshaderpostprocessing.vert</file>
+        <file alias="vertexshaderPostprocessingSimple">../src/rendering/shaders/vertexshaderpostprocessingsimple.vert</file>
+        <file alias="fragmentshaderPostprocessing">../src/rendering/shaders/fragmentshaderpostprocessing.frag</file>
+        <file alias="fragmentshaderPostprocessingSimple">../src/rendering/shaders/fragmentshaderpostprocessingsimple.frag</file>
+
+        <file alias="vertexshaderHistogram">../src/metric/shaders/vertexshaderhistogram.vert</file>
+        <file alias="fragmentshaderHistogram">../src/metric/shaders/fragmentshaderhistogram.frag</file>
+
+        <file alias="vertexshaderJointHistogram">../src/metric/shaders/vertexshaderjointhistogram.vert</file>
+        <file alias="fragmentshaderJointHistogram">../src/metric/shaders/fragmentshaderjointhistogram.frag</file>
+
+        <file alias="vertexshaderEntropy">../src/metric/shaders/vertexshaderentropy.vert</file>
+        <file alias="fragmentshaderEntropy">../src/metric/shaders/fragmentshaderentropy.frag</file>
+
+        <file alias="vertexshaderSSD">../src/metric/shaders/vertexshaderssd.vert</file>
+        <file alias="fragmentshaderSSD">../src/metric/shaders/fragmentshaderssd.frag</file>
+    </qresource>
+</RCC>

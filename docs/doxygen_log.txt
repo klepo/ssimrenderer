@@ -1,0 +1,13 @@
+E:/study/DVI/TraumaTech/projekt/projects/ssimrenderer/src/rendering/mainrenderer.cpp:2948: warning: Reached end of file while still inside a (nested) comment. Nesting level 2 (probable line reference: 1517, 1510)
+E:/study/DVI/TraumaTech/projekt/projects/ssimrenderer/include/rendering/mainrenderer.h:65: warning: The following parameters of SSIMRenderer::MainRenderer::getRecomputedVertices(float *&vertices, bool transformed=false) are not documented:
+  parameter 'transformed'
+E:/study/DVI/TraumaTech/projekt/projects/ssimrenderer/include/rendering/mainrenderer.h:65: warning: return type of member SSIMRenderer::MainRenderer::getRecomputedVertices is not documented
+E:/study/DVI/TraumaTech/projekt/projects/ssimrenderer/src/rendering/mainrenderer.cpp:473: warning: argument 'crop' of command @param is not found in the argument list of SSIMRenderer::MainRenderer::getVerticesMask(float *vertices=0, int numberOfVertices=0, const QRectF &cropRectangle=QRectF())
+E:/study/DVI/TraumaTech/projekt/projects/ssimrenderer/include/rendering/mainrenderer.h:67: warning: The following parameters of SSIMRenderer::MainRenderer::getVerticesMask(float *vertices=0, int numberOfVertices=0, const QRectF &cropRectangle=QRectF()) are not documented:
+  parameter 'cropRectangle'
+E:/study/DVI/TraumaTech/projekt/projects/ssimrenderer/src/rendering/mainrenderer.cpp:1430: warning: argument 'Eye' of command @param is not found in the argument list of SSIMRenderer::MainRenderer::setEye(const QVector3D &value)
+E:/study/DVI/TraumaTech/projekt/projects/ssimrenderer/include/rendering/mainrenderer.h:157: warning: The following parameters of SSIMRenderer::MainRenderer::setEye(const QVector3D &value) are not documented:
+  parameter 'value'
+E:/study/DVI/TraumaTech/projekt/projects/ssimrenderer/src/rendering/mainrenderer.cpp:1463: warning: argument 'camera' of command @param is not found in the argument list of SSIMRenderer::MainRenderer::setPerspective(SSIMRenderer::Pyramid perspective)
+E:/study/DVI/TraumaTech/projekt/projects/ssimrenderer/include/rendering/mainrenderer.h:160: warning: The following parameters of SSIMRenderer::MainRenderer::setPerspective(SSIMRenderer::Pyramid perspective) are not documented:
+  parameter 'perspective'

@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file alias="programSSD">../src/metric/programs/ssd.cl</file>
+    </qresource>
+</RCC>

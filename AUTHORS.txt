@@ -1,0 +1,7 @@
+Authors
+=======
+
+  * Petr Kleparnik <ikleparnik@fit.vutbr.cz>
+  * Ondrej Klima   <iklima@fit.vutbr.cz>
+  * Michal Spanel  <spanel@fit.vutbr.cz>
+  * Pavel Zemcik   <zemcik@stud.fit.vutbr.cz>
