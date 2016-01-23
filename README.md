@@ -1,10 +1,9 @@
-#							SSIM Renderer Library 
-
+SSIM Renderer Library 
+=====================
 SSIM Renderer is a Qt-based C++ library for OpenGL enabled rendering of virtual X-Ray images from statistical shape and intensity models.
 
-## Description
--------------------------------------------------------------------------------
-
+Description
+-----------
 The main focus of the library is a rendering of virtual X-Ray images from 
 a statistical shape and intensity model (SSIM) proposed by R. Yao [1]. 
 The library provides OpenGL accelerated rendering of the SSIM according to [2]. 
@@ -17,10 +16,8 @@ format.
 
 Version from 17 December 2015.
 
-
-## Features
--------------------------------------------------------------------------------
-
+Features
+--------
  * Rendering of virtual X-Ray images from SSIM.  
  * Rendering of surface images from SSIM/SSM.  
  * Rendering of silhouettes of SSIM/SSM.      
@@ -30,10 +27,8 @@ Version from 17 December 2015.
  * Computation of OpenGL and OpenCL accelerated image similarity metrics.
  * etc.      
 
-
-## Prerequisites
--------------------------------------------------------------------------------
-
+Prerequisites
+-------------
 Qt Toolkit in version 5.x or later is required. Other required librarires are 
 redistributed within the SSIM Renderer package. The libraries are redistributed 
 in both source and binary form. Following 3rd party libraries are included:
@@ -46,10 +41,8 @@ in both source and binary form. Following 3rd party libraries are included:
     
 The library has been developped for usage with Windows 7 or later.
 
-
-## Examples
--------------------------------------------------------------------------------
-
+Examples
+--------
 To get started with the SSIM Renderer library, please have a look 
 at the included examples:
 
@@ -67,35 +60,28 @@ at the included examples:
 
 There is also a full reference manual available.
 
-
-## Downloading
--------------------------------------------------------------------------------
-
+Downloading
+-----------
 The SSIM Renderer library can be further redistributed under the terms 
-of the BUT OPEN SOURCE LICENCE. 
+of the the LGPL version 3 open source license. 
 The library can be obtained from the following location: 
 <http://www.fit.vutbr.cz/research/prod/?id=458>
 
-
-## Acknowledgement
--------------------------------------------------------------------------------
-
+Acknowledgement
+---------------
 This work has been supported by the Technology Agency of the Czech Republic 
 (TA CR, Project Id: TA04011606).
 
 
-## Authors
--------------------------------------------------------------------------------
-
+Authors
+-------
  * Petr Kleparnik   (<ikleparnik@fit.vutbr.cz>)
  * Ondrej Klima     (<iklima@fit.vutbr.cz>)
  * Michal Spanel    (<spanel@fit.vutbr.cz>)
  * Pavel Zemcik     (<zemcik@stud.fit.vutbr.cz>)
 
- 
-## References
--------------------------------------------------------------------------------
-
+References
+----------
 [1] J. Yao, R. Taylor, "Construction and simplification of bone density models"
     SPIE Medical Imaging: 2001.
     
