@@ -1,6 +1,7 @@
 SSIM Renderer Library 
 =====================
-SSIM Renderer is a Qt-based C++ library for OpenGL enabled rendering of virtual X-Ray images from statistical shape and intensity models.
+SSIM Renderer is a Qt-based C++ library for OpenGL enabled rendering
+of virtual X-Ray images from statistical shape and intensity models.
 
 Description
 -----------
