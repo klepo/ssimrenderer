@@ -1,11 +1,8 @@
-							SSIM Renderer Library 
-===============================================================================
+#							SSIM Renderer Library 
 
-SSIM Renderer is a Qt-based C++ library for OpenGL enabled rendering of virtual 
-X-Ray images from statistical shape and intensity models.
+SSIM Renderer is a Qt-based C++ library for OpenGL enabled rendering of virtual X-Ray images from statistical shape and intensity models.
 
-
- Description
+## Description
 -------------------------------------------------------------------------------
 
 The main focus of the library is a rendering of virtual X-Ray images from 
@@ -21,7 +18,7 @@ format.
 Version from 17 December 2015.
 
 
- Features
+## Features
 -------------------------------------------------------------------------------
 
  * Rendering of virtual X-Ray images from SSIM.  
@@ -34,7 +31,7 @@ Version from 17 December 2015.
  * etc.      
 
 
- Prerequisites
+## Prerequisites
 -------------------------------------------------------------------------------
 
 Qt Toolkit in version 5.x or later is required. Other required librarires are 
@@ -50,7 +47,7 @@ in both source and binary form. Following 3rd party libraries are included:
 The library has been developped for usage with Windows 7 or later.
 
 
- Examples
+## Examples
 -------------------------------------------------------------------------------
 
 To get started with the SSIM Renderer library, please have a look 
@@ -71,7 +68,7 @@ at the included examples:
 There is also a full reference manual available.
 
 
- Downloading
+## Downloading
 -------------------------------------------------------------------------------
 
 The SSIM Renderer library can be further redistributed under the terms 
@@ -80,14 +77,14 @@ The library can be obtained from the following location:
 <http://www.fit.vutbr.cz/research/prod/?id=458>
 
 
- Acknowledgement
+## Acknowledgement
 -------------------------------------------------------------------------------
 
 This work has been supported by the Technology Agency of the Czech Republic 
 (TA CR, Project Id: TA04011606).
 
 
- Authors
+## Authors
 -------------------------------------------------------------------------------
 
  * Petr Kleparnik   (<ikleparnik@fit.vutbr.cz>)
@@ -96,10 +93,10 @@ This work has been supported by the Technology Agency of the Czech Republic
  * Pavel Zemcik     (<zemcik@stud.fit.vutbr.cz>)
 
  
- References
+## References
 -------------------------------------------------------------------------------
 
-[1] J. Yao, R. Taylor, "Construction and simplification of bone density models" 
+[1] J. Yao, R. Taylor, "Construction and simplification of bone density models"
     SPIE Medical Imaging: 2001.
     
 [2] M. Ehlke, HRamm, H. Lamecker, H.C. Hege, S. Zachow. "Fast generation 
