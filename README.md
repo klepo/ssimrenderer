@@ -1,5 +1,3 @@
-									README 
-===============================================================================
 							SSIM Renderer Library 
 ===============================================================================
 
@@ -22,7 +20,7 @@ format.
 
 Version from 17 December 2015.
 
-    
+
  Features
 -------------------------------------------------------------------------------
 
@@ -38,6 +36,7 @@ Version from 17 December 2015.
 
  Prerequisites
 -------------------------------------------------------------------------------
+
 Qt Toolkit in version 5.x or later is required. Other required librarires are 
 redistributed within the SSIM Renderer package. The libraries are redistributed 
 in both source and binary form. Following 3rd party libraries are included:
@@ -59,8 +58,8 @@ at the included examples:
 
  * ImageMetrics.cpp
    - example demonstrating computation of image similarity metrics 
-     between two virtual X-Ray images   /ref ImageMetrics.cpp
-	 
+     between two virtual X-Ray images
+ 
  * SimpleStatismoModel.cpp
    - demonstration of the offscreen rendering of a simple polygonal 
      shape model
