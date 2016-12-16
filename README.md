@@ -64,7 +64,7 @@ There is also a full reference manual available.
 Downloading
 -----------
 The SSIM Renderer library can be further redistributed under the terms 
-of the the LGPL version 3 open source license. 
+of the LGPL version 3 open source license. 
 The library can be obtained from the following location: 
 <http://www.fit.vutbr.cz/research/prod/?id=458>
 
