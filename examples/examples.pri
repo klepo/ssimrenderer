@@ -36,7 +36,7 @@ QMAKE_LFLAGS += /ignore:4099
 TEMPLATE = app
 
 # Inlude SSIMRenderer library
-include($$PWD/../../ssimrenderer.pri)
+include($$PWD/../ssimrenderer.pri)
 
 # Copy built example to bin dir
 QMAKE_POST_LINK += ($(CHK_DIR_EXISTS) \"$$PWD/../bin/$$ARCH\" $(MKDIR) \"$$PWD/../bin/$$ARCH\") &

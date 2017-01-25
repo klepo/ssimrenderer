@@ -15,5 +15,5 @@ LIBS += \
     -L"$$PWD/3rdparty/zlib/lib/$$ARCH/$$BUILD_MODE" -lzlibstatic \
 
 contains(OPENCL, true) {
-    include("$$PWD/../opencl.pri")
+    include("$$PWD/opencl.pri")
 }
