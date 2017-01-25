@@ -12,7 +12,7 @@
 TYPE = static
 
 # Enable or disable OpenCL
-OPENCL = true
+OPENCL = false
 
 #----------------
 

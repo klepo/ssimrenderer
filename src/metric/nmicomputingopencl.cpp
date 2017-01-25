@@ -19,6 +19,7 @@
  *
  */
 
+#ifdef USE_OPENCL
 #include "metric/nmicomputingopencl.h"
 
 namespace SSIMRenderer
@@ -239,3 +240,5 @@ float NMIComputingOpenCL::renderEntropyGPU(GLuint /*textureHistogramId*/, bool /
     return 0;
 }
 }
+
+#endif // USE_OPENCL

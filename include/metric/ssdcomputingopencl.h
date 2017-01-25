@@ -17,6 +17,7 @@
  *
  */
 
+#ifdef USE_OPENCL
 #ifndef SSIMR_SSDCOMPUTINGOPENCL_H
 #define SSIMR_SSDCOMPUTINGOPENCL_H
 
@@ -77,3 +78,4 @@ private:
 }
 
 #endif // SSIMR_SSDCOMPUTINGOPENCL_H
+#endif // USE_OPENCL

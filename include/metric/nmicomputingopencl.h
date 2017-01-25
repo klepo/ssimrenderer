@@ -19,6 +19,7 @@
  *
  */
 
+#ifdef USE_OPENCL
 #ifndef SSIMR_NMICOMPUTINGOPENCL_H
 #define SSIMR_NMICOMPUTINGOPENCL_H
 
@@ -97,3 +98,4 @@ private:
 }
 
 #endif // SSIMR_NMICOMPUTINGOPENCL_H
+#endif // USE_OPENCL

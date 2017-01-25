@@ -391,8 +391,12 @@ void OpenGLWrapper::createContext()
         context->makeCurrent(activeSurface);
         //qDebug() << context->supportsThreadedOpenGL();
 
+        hGLRC = 0;
+        hDC = 0;
+#ifdef USE_OPENCL
         hGLRC = wglGetCurrentContext();
         hDC = wglGetCurrentDC();
+#endif // USE_OPENCL
 
         if (hasDebugExtension()) {
             logger = new QOpenGLDebugLogger();

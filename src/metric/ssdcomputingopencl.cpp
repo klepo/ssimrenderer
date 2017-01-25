@@ -17,6 +17,7 @@
  *
  */
 
+#ifdef USE_OPENCL
 #include "metric/ssdcomputingopencl.h"
 
 namespace SSIMRenderer
@@ -243,3 +244,5 @@ size_t SSDComputingOpenCL::iCeilTo(size_t size, size_t alignSize) const
     return (size_t) (((size - 1 + alignSize) / alignSize) * alignSize);
 }
 }
+
+#endif // USE_OPENCL

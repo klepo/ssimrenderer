@@ -8,8 +8,9 @@
 
 #----Settings----
 
-# Enable OpenCL
-#OPENCL = true
+# Enable or disable OpenCL
+OPENCL = false
+
 DEFINES += DATA_PATH=\"\\\"$$PWD/data\\\"\"
 
 #----------------
