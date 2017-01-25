@@ -1,4 +1,4 @@
-include($$PWD/ssimrenderer/ssimrenderer_dependents.pri)
+include($$PWD/ssimrenderer_dependents.pri)
 
 ### shared
 #DEFINES += SHARED_LIBRENDER_LIBRARY
