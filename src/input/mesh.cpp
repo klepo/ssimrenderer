@@ -223,17 +223,20 @@ void Mesh::generateTableOfTrianglesAdjacency()
         if (it != hashTable.end())
             tableOfTrianglesAdjacency[i * 6 + 3] = it.value();
         else
-            throw std::runtime_error("Wrong mesh file (holes in the mesh?)");
+            tableOfTrianglesAdjacency[i * 6 + 3] = tableOfTriangles[i * 3 + 2];
+            //throw std::runtime_error("Wrong mesh file (holes in the mesh?)");
         it = hashTable.find(QString::number(tableOfTriangles[i * 3 + 2]) + QString::number(tableOfTriangles[i * 3 + 1]));
         if (it != hashTable.end())
             tableOfTrianglesAdjacency[i * 6 + 4] = it.value();
         else
-            throw std::runtime_error("Wrong mesh file (holes in the mesh?)");
+            tableOfTrianglesAdjacency[i * 6 + 4] = tableOfTriangles[i * 3 + 0];
+            //throw std::runtime_error("Wrong mesh file (holes in the mesh?)");
         it = hashTable.find(QString::number(tableOfTriangles[i * 3 + 0]) + QString::number(tableOfTriangles[i * 3 + 2]));
         if (it != hashTable.end())
             tableOfTrianglesAdjacency[i * 6 + 5] = it.value();
         else
-            throw std::runtime_error("Wrong mesh file (holes in the mesh?)");
+            tableOfTrianglesAdjacency[i * 6 + 5] = tableOfTriangles[i * 3 + 1];
+            //throw std::runtime_error("Wrong mesh file (holes in the mesh?)");
     }
 }
 

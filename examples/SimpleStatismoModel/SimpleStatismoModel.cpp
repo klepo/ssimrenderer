@@ -47,17 +47,17 @@ int main(int argc, char *argv[])
 
     // Files containing a polygonal mesh and corresponding PCA shape model.
     // Coordinates of the vertices should be stored in milimeter units.
-    SSIMRenderer::HDF5MeshFile *meshFile = NULL;
-    SSIMRenderer::HDF5StatisticalDataFile *shapeFile = NULL;
+    SSIMRenderer::HDF5MeshFile *meshFile = 0;
+    SSIMRenderer::HDF5StatisticalDataFile *shapeFile = 0;
 
     // Tries to load the files.
     try {
-        meshFile = new SSIMRenderer::HDF5MeshFile(DATA_PATH "/shape_model.h5");
+        meshFile = new SSIMRenderer::HDF5MeshFile(DATA_PATH "/bfm.h5");
 
         // The pose of a shape model should be standardized to a centroid of the shape model,
         // but it is not neccesary. The following example shape model of a femur bone is
         // not translated to its centroid.
-        shapeFile = new SSIMRenderer::HDF5StatisticalDataFile(DATA_PATH "/shape_model.h5");
+        shapeFile = new SSIMRenderer::HDF5StatisticalDataFile(DATA_PATH "/bfm.h5");
 
     } catch (std::exception &e) {
         // Wrong file

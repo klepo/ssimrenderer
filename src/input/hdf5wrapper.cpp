@@ -27,7 +27,7 @@ namespace SSIMRenderer
  */
 HDF5Wrapper::HDF5Wrapper(const QString &filename)
 {
-    file = H5Fopen(filename.toStdString().c_str(), H5F_ACC_RDONLY, H5P_DEFAULT);
+    file = H5Fopen(filename.toStdString().c_str(), H5F_ACC_RDONLY, 0);
     if (file < 0) {
         throw std::runtime_error(std::string("Error opening HDF5 file ") + filename.toStdString());
     }
@@ -103,14 +103,21 @@ void HDF5Wrapper::load2DMatrix(const QString &name, unsigned int *(&data), long 
  */
 void HDF5Wrapper::load2DMatrix(const QString &name, void *(&data), long &rows, long &cols, const int type, const bool optional)
 {
-    // Open dataset
-    hid_t dataset = H5Dopen(file, (char*) name.toStdString().c_str(), H5P_DEFAULT);
-
-    if (dataset < 0){
+    hid_t dataset = 0;
+    bool exists = false;
+    if (H5Lexists(file, const_cast<char *>(name.toStdString().c_str()), 0))
+         exists = H5Oexists_by_name(file, const_cast<char *>(name.toStdString().c_str()), 0) != 0;
+    if (exists) {
+        // Open dataset
+        dataset = H5Dopen(file, const_cast<char *>(name.toStdString().c_str()), 0);
+        if (dataset < 0){
+            throw std::runtime_error("H5Dopen error");
+        }
+    } else {
         if (optional) {
-            data = NULL;
             rows = 0;
             cols = 0;
+            data = 0;
             return;
         }
         throw std::runtime_error("H5Dopen error");
@@ -129,8 +136,10 @@ void HDF5Wrapper::load2DMatrix(const QString &name, void *(&data), long &rows, l
     }
 
     // Check type
-    if (!H5Tequal(datatype, type))
-        throw std::runtime_error("H5Tequal error - wrong datatype of dataset");
+    if (!H5Tequal(datatype, type)) {
+        if (type != H5T_NATIVE_UINT || !H5Tequal(datatype, H5T_NATIVE_INT))
+            throw std::runtime_error("H5Tequal error - wrong datatype of dataset");
+    }
 
     // Get rank and dims
     hsize_t rank = H5Sget_simple_extent_ndims(dataspace);

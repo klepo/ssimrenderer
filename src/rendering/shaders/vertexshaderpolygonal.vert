@@ -39,6 +39,7 @@ void main()
 
     gl_Position = uMatrix * vec4(position + positionDiff, 1.0f);
     vColor = aColor;
-
+    if (vColor == vec3(0.0, 0.0, 0.0))
+        vColor = vec3(0.5, 0.5, 0.5);
     vNormal = uNormalMatrix * normal;
 }

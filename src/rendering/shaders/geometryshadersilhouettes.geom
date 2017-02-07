@@ -82,6 +82,12 @@ void main()
     vec3 l0 = v0 - v1;
     vec3 l1 = v2 - v1;
 
+    // borders of holes
+    if (v3 == v2) emitEdge(0, 1);
+    if (v4 == v0) emitEdge(1, 2);
+    if (v5 == v1) emitEdge(2, 0);
+
+    // filled objects
     if (isFront(v0, v2, v1)) {
         if (!isFront(v3, v0, v1)) emitEdge(0, 1);
         if (!isFront(v1, v2, v4)) emitEdge(1, 2);
