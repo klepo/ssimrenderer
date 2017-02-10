@@ -1512,7 +1512,7 @@ QVector<QVector3D> MainRenderer::getPoints()
  * @brief MainRenderer::getMinimalDistancesToPoints
  * @return
  *
- * @todo TODO nepouzitom, predelat, upravit, zprehlednit
+ * @todo TODO nepouzito, predelat, upravit, zprehlednit
  */
 /*QVector<float> MainRenderer::getMinimalDistancesToPoints(void (*f)(float *d, unsigned char *u, int  w, int h))
 {
@@ -1743,48 +1743,48 @@ void MainRenderer::initialize()
         // Load, create and link shaders
         // Main program for render geometry with density to texture
         density->program = new QOpenGLShaderProgram();
-        addShader(density->program, QOpenGLShader::Vertex, ":/vertexshaderDensity");
-        addShader(density->program, QOpenGLShader::Geometry, ":/geometryshaderDensity");
+        addShader(density->program, QOpenGLShader::Vertex, ":/vsDensity");
+        addShader(density->program, QOpenGLShader::Geometry, ":/gsDensity");
         density->fragmentShader = new QOpenGLShader(QOpenGLShader::Fragment);
         addShaderFromSource(density->program, density->fragmentShader, fsGenerator.generateFragmentShaderSourceCode(0));
         linkProgram(density->program);
 
         // Program for render silhouettes
         silhouettes->program = new QOpenGLShaderProgram();
-        addShader(silhouettes->program, QOpenGLShader::Vertex, ":/vertexshaderSilhouettes");
-        addShader(silhouettes->program, QOpenGLShader::Geometry, ":/geometryshaderSilhouettes");
-        addShader(silhouettes->program, QOpenGLShader::Fragment, ":/fragmentshaderSilhouettes");
+        addShader(silhouettes->program, QOpenGLShader::Vertex, ":/vsSilhouettes");
+        addShader(silhouettes->program, QOpenGLShader::Geometry, ":/gsSilhouettes");
+        addShader(silhouettes->program, QOpenGLShader::Fragment, ":/fsSilhouettes");
         linkProgram(silhouettes->program);
 
         // Program for computing coefficients and vertices
         computing->program = new QOpenGLShaderProgram();
-        addShader(computing->program, QOpenGLShader::Vertex, ":/vertexshaderComputing");
-        addShader(computing->program, QOpenGLShader::Fragment, ":/fragmentshaderComputing");
+        addShader(computing->program, QOpenGLShader::Vertex, ":/vsComputing");
+        addShader(computing->program, QOpenGLShader::Fragment, ":/fsComputing");
         linkProgram(computing->program);
 
         // Program for rendering pyramid
         pyramid->program = new QOpenGLShaderProgram();
-        addShader(pyramid->program, QOpenGLShader::Vertex, ":/vertexshaderPyramid");
-        addShader(pyramid->program, QOpenGLShader::Fragment, ":/fragmentshaderPyramid");
+        addShader(pyramid->program, QOpenGLShader::Vertex, ":/vsPyramid");
+        addShader(pyramid->program, QOpenGLShader::Fragment, ":/fsPyramid");
         linkProgram(pyramid->program);
 
         // Program for render polygonal model
         polygonal->program = new QOpenGLShaderProgram();
-        addShader(polygonal->program, QOpenGLShader::Vertex, ":/vertexshaderPolygonal");
-        //addShader(polygonal->program, QOpenGLShader::Geometry, ":/geometryshaderPolygonal");
-        addShader(polygonal->program, QOpenGLShader::Fragment, ":/fragmentshaderPolygonal");
+        addShader(polygonal->program, QOpenGLShader::Vertex, ":/vsPolygonal");
+        //addShader(polygonal->program, QOpenGLShader::Geometry, ":/gsPolygonal");
+        addShader(polygonal->program, QOpenGLShader::Fragment, ":/fsPolygonal");
         linkProgram(polygonal->program);
 
         // Program for render final texture with textures
         postprocessing->program = new QOpenGLShaderProgram();
-        addShader(postprocessing->program, QOpenGLShader::Vertex, ":/vertexshaderPostprocessing");
-        addShader(postprocessing->program, QOpenGLShader::Fragment, ":/fragmentshaderPostprocessing");
+        addShader(postprocessing->program, QOpenGLShader::Vertex, ":/vsPostprocessing");
+        addShader(postprocessing->program, QOpenGLShader::Fragment, ":/fsPostprocessing");
         linkProgram(postprocessing->program);
 
         // Program for render final quad with output texture
         postprocessing->programSimple = new QOpenGLShaderProgram();
-        addShader(postprocessing->programSimple, QOpenGLShader::Vertex, ":/vertexshaderPostprocessingSimple");
-        addShader(postprocessing->programSimple, QOpenGLShader::Fragment, ":/fragmentshaderPostprocessingSimple");
+        addShader(postprocessing->programSimple, QOpenGLShader::Vertex, ":/vsPostprocessingSimple");
+        addShader(postprocessing->programSimple, QOpenGLShader::Fragment, ":/fsPostprocessingSimple");
         linkProgram(postprocessing->programSimple);
 
         // Generate buffers
