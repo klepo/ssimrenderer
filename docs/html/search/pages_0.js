@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['todo_20list',['Todo List',['../todo.html',1,'']]]
+  ['ssim_20renderer_20library',['SSIM Renderer Library',['../index.html',1,'']]]
 ];

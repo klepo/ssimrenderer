@@ -1,13 +1,22 @@
-D:/FIT/DVI/TraumaTech/svn/projects/ssimrenderer/src/rendering/mainrenderer.cpp:2948: warning: Reached end of file while still inside a (nested) comment. Nesting level 2 (probable line reference: 1517, 1510)
-D:/FIT/DVI/TraumaTech/svn/projects/ssimrenderer/include/rendering/mainrenderer.h:65: warning: The following parameters of SSIMRenderer::MainRenderer::getRecomputedVertices(float *&vertices, bool transformed=false) are not documented:
+E:/study/DVI/TraumaTech/projekt/projects/ssimrenderer-git/src/rendering/mainrenderer.cpp:2948: warning: Reached end of file while still inside a (nested) comment. Nesting level 2 (probable line reference: 1517, 1510)
+E:/study/DVI/TraumaTech/projekt/projects/ssimrenderer-git/include/rendering/mainrenderer.h:65: warning: The following parameters of SSIMRenderer::MainRenderer::getRecomputedVertices(float *&vertices, bool transformed=false) are not documented:
   parameter 'transformed'
-D:/FIT/DVI/TraumaTech/svn/projects/ssimrenderer/include/rendering/mainrenderer.h:65: warning: return type of member SSIMRenderer::MainRenderer::getRecomputedVertices is not documented
-D:/FIT/DVI/TraumaTech/svn/projects/ssimrenderer/src/rendering/mainrenderer.cpp:473: warning: argument 'crop' of command @param is not found in the argument list of SSIMRenderer::MainRenderer::getVerticesMask(float *vertices=0, int numberOfVertices=0, const QRectF &cropRectangle=QRectF())
-D:/FIT/DVI/TraumaTech/svn/projects/ssimrenderer/include/rendering/mainrenderer.h:67: warning: The following parameters of SSIMRenderer::MainRenderer::getVerticesMask(float *vertices=0, int numberOfVertices=0, const QRectF &cropRectangle=QRectF()) are not documented:
+E:/study/DVI/TraumaTech/projekt/projects/ssimrenderer-git/include/rendering/mainrenderer.h:65: warning: return type of member SSIMRenderer::MainRenderer::getRecomputedVertices is not documented
+E:/study/DVI/TraumaTech/projekt/projects/ssimrenderer-git/src/rendering/mainrenderer.cpp:473: warning: argument 'crop' of command @param is not found in the argument list of SSIMRenderer::MainRenderer::getVerticesMask(float *vertices=0, int numberOfVertices=0, const QRectF &cropRectangle=QRectF())
+E:/study/DVI/TraumaTech/projekt/projects/ssimrenderer-git/include/rendering/mainrenderer.h:67: warning: The following parameters of SSIMRenderer::MainRenderer::getVerticesMask(float *vertices=0, int numberOfVertices=0, const QRectF &cropRectangle=QRectF()) are not documented:
   parameter 'cropRectangle'
-D:/FIT/DVI/TraumaTech/svn/projects/ssimrenderer/src/rendering/mainrenderer.cpp:1430: warning: argument 'Eye' of command @param is not found in the argument list of SSIMRenderer::MainRenderer::setEye(const QVector3D &value)
-D:/FIT/DVI/TraumaTech/svn/projects/ssimrenderer/include/rendering/mainrenderer.h:157: warning: The following parameters of SSIMRenderer::MainRenderer::setEye(const QVector3D &value) are not documented:
+E:/study/DVI/TraumaTech/projekt/projects/ssimrenderer-git/src/rendering/mainrenderer.cpp:1430: warning: argument 'Eye' of command @param is not found in the argument list of SSIMRenderer::MainRenderer::setEye(const QVector3D &value)
+E:/study/DVI/TraumaTech/projekt/projects/ssimrenderer-git/include/rendering/mainrenderer.h:157: warning: The following parameters of SSIMRenderer::MainRenderer::setEye(const QVector3D &value) are not documented:
   parameter 'value'
-D:/FIT/DVI/TraumaTech/svn/projects/ssimrenderer/src/rendering/mainrenderer.cpp:1463: warning: argument 'camera' of command @param is not found in the argument list of SSIMRenderer::MainRenderer::setPerspective(SSIMRenderer::Pyramid perspective)
-D:/FIT/DVI/TraumaTech/svn/projects/ssimrenderer/include/rendering/mainrenderer.h:160: warning: The following parameters of SSIMRenderer::MainRenderer::setPerspective(SSIMRenderer::Pyramid perspective) are not documented:
+E:/study/DVI/TraumaTech/projekt/projects/ssimrenderer-git/src/rendering/mainrenderer.cpp:1463: warning: argument 'camera' of command @param is not found in the argument list of SSIMRenderer::MainRenderer::setPerspective(SSIMRenderer::Pyramid perspective)
+E:/study/DVI/TraumaTech/projekt/projects/ssimrenderer-git/include/rendering/mainrenderer.h:160: warning: The following parameters of SSIMRenderer::MainRenderer::setPerspective(SSIMRenderer::Pyramid perspective) are not documented:
   parameter 'perspective'
+E:/study/DVI/TraumaTech/projekt/projects/ssimrenderer-git/include/metric/metricwrapper.h:45: warning: parameters of member SSIMRenderer::MetricWrapper::setInputImage are not (all) documented
+E:/study/DVI/TraumaTech/projekt/projects/ssimrenderer-git/include/metric/metricwrapper.h:48: warning: parameters of member SSIMRenderer::MetricWrapper::setRenderingOutputImage are not (all) documented
+E:/study/DVI/TraumaTech/projekt/projects/ssimrenderer-git/include/metric/nmiwrapper.h:45: warning: parameters of member SSIMRenderer::NMIWrapper::setInputImage are not (all) documented
+E:/study/DVI/TraumaTech/projekt/projects/ssimrenderer-git/include/metric/nmiwrapper.h:48: warning: parameters of member SSIMRenderer::NMIWrapper::setRenderingOutputImage are not (all) documented
+E:/study/DVI/TraumaTech/projekt/projects/ssimrenderer-git/include/metric/nmiwrapper.h:54: warning: return type of member SSIMRenderer::NMIWrapper::getJointHistogramImage is not documented
+E:/study/DVI/TraumaTech/projekt/projects/ssimrenderer-git/include/metric/nmiwrapper.h:57: warning: return type of member SSIMRenderer::NMIWrapper::getInputImageHistogramImage is not documented
+E:/study/DVI/TraumaTech/projekt/projects/ssimrenderer-git/include/metric/nmiwrapper.h:60: warning: return type of member SSIMRenderer::NMIWrapper::getRenderingOutputImageHistogramImage is not documented
+E:/study/DVI/TraumaTech/projekt/projects/ssimrenderer-git/include/metric/ssdwrapper.h:42: warning: parameters of member SSIMRenderer::SSDWrapper::setInputImage are not (all) documented
+E:/study/DVI/TraumaTech/projekt/projects/ssimrenderer-git/include/metric/ssdwrapper.h:45: warning: parameters of member SSIMRenderer::SSDWrapper::setRenderingOutputImage are not (all) documented
