@@ -6,6 +6,6 @@
 #
 #-------------------------------------------------
 
-include($$PWD/../examples.pri)
+include($$PWD/../example.pri)
 TARGET = SimpleStatismoModel
 SOURCES += SimpleStatismoModel.cpp

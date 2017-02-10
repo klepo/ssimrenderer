@@ -38,13 +38,13 @@ int main(int argc, char *argv[])
     SSIMRenderer::OffscreenRenderer *renderer = new SSIMRenderer::OffscreenRenderer(1024, 1024);
 
     // Input file for tetrahedral mesh in Lm6 Mesh format.
-    SSIMRenderer::Lm6MeshFile *meshFile = NULL;
+    SSIMRenderer::Lm6MeshFile *meshFile = 0;
     // Input file for PCA-based shape model corresponding to the previous tetrahedral mesh.
     // The shape model is stored in a custom format as a set of MATLAB matrices.
-    SSIMRenderer::MatStatisticalDataFile *shapeFile   = NULL;
+    SSIMRenderer::MatStatisticalDataFile *shapeFile = 0;
     // Input file for PCA-based model of bone densities. The bone densities are described
     // within each tetrahedron using Bernstain polynomials of certain degree (typically 0-3).
-    SSIMRenderer::MatStatisticalDataFile *densityFile = NULL;
+    SSIMRenderer::MatStatisticalDataFile *densityFile = 0;
 
     try {
         // The Lm6 model contains tetrahedral and even polygonal meshes.
@@ -127,9 +127,9 @@ int main(int argc, char *argv[])
 
     // Exports only the part of the shape model surface that is visible in the
     // rendered X-Ray image. The truncated surface is stored in STL file format.
-    float *v = NULL;
-    renderer->getRecomputedVertices(v);
     int vn = meshFile->getNumberOfVertices();
+    float *v = new float[vn * 3]();
+    renderer->getRecomputedVertices(v);
     QVector<bool> mask = renderer->getVerticesMask(v, vn);
     renderer->exportSTL(DATA_PATH "/truncated.stl", true, mask);
     qDebug() << "Truncated polygonal model saved to " DATA_PATH "/truncated.stl";

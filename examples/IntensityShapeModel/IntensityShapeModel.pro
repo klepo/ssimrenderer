@@ -6,7 +6,7 @@
 #
 #-------------------------------------------------
 
-include($$PWD/../examples.pri)
+include($$PWD/../example.pri)
 TARGET = IntensityShapeModel
 SOURCES += IntensityShapeModel.cpp
 

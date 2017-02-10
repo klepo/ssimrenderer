@@ -6,6 +6,6 @@
 #
 #-------------------------------------------------
 
-include($$PWD/../examples.pri)
+include($$PWD/../example.pri)
 TARGET = ImageMetrics
 SOURCES += ImageMetrics.cpp

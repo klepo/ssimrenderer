@@ -36,17 +36,17 @@ int main(int argc, char *argv[])
 
     // Initialization of CPU and OpenGL versions of the NMI metric.
     // The image from the renderer will be used as one of the inputs for the metric evaluation.
-    SSIMRenderer::NMIComputingCPU    * nmiCPU    = new SSIMRenderer::NMIComputingCPU(renderer);
-    SSIMRenderer::NMIComputingOpenGL * nmiOpenGL = new SSIMRenderer::NMIComputingOpenGL(renderer);
+    SSIMRenderer::NMIComputingCPU    *nmiCPU    = new SSIMRenderer::NMIComputingCPU(renderer);
+    SSIMRenderer::NMIComputingOpenGL *nmiOpenGL = new SSIMRenderer::NMIComputingOpenGL(renderer);
 
     // Initialization of CPU and OpenGL versions of the SSD metric.
-    SSIMRenderer::SSDComputingCPU    * ssdCPU    = new SSIMRenderer::SSDComputingCPU(renderer);
-    SSIMRenderer::SSDComputingOpenGL * ssdOpenGL = new SSIMRenderer::SSDComputingOpenGL(renderer);
+    SSIMRenderer::SSDComputingCPU    *ssdCPU    = new SSIMRenderer::SSDComputingCPU(renderer);
+    SSIMRenderer::SSDComputingOpenGL *ssdOpenGL = new SSIMRenderer::SSDComputingOpenGL(renderer);
 
     // Input files for the shape model.
-    SSIMRenderer::Lm6MeshFile *meshFile = NULL;
-    SSIMRenderer::MatStatisticalDataFile *shapeFile   = NULL;
-    SSIMRenderer::MatStatisticalDataFile *densityFile = NULL;
+    SSIMRenderer::Lm6MeshFile *meshFile = 0;
+    SSIMRenderer::MatStatisticalDataFile *shapeFile   = 0;
+    SSIMRenderer::MatStatisticalDataFile *densityFile = 0;
 
     try {
         meshFile    = new SSIMRenderer::Lm6MeshFile(DATA_PATH "/model.mesh");
