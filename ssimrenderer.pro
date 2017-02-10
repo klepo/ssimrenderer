@@ -10,6 +10,6 @@ TEMPLATE = subdirs
 
 SUBDIRS = \
     ./ssimrenderer_library.pro \
-    ./ssimrenderer_examples.pro \
+    examples \
 
 CONFIG += ordered

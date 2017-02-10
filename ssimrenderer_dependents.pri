@@ -14,6 +14,6 @@ LIBS += \
     -L"$$PWD/3rdparty/matio/lib/$$ARCH/$$BUILD_MODE" -lmatio \
     -L"$$PWD/3rdparty/zlib/lib/$$ARCH/$$BUILD_MODE" -lzlibstatic \
 
-contains(OPENCL, true) {
-    include("$$PWD/opencl.pri")
-}
+#contains(DEFINES, OPENCL) {
+#    include("$$PWD/../helper_scripts/opencl.pri")
+#}

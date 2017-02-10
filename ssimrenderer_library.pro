@@ -11,8 +11,8 @@
 # Select type of library: shared/static
 TYPE = static
 
-# Enable or disable OpenCL
-OPENCL = false
+# Enable OpenCL?
+#DEFINES += OPENCL
 
 #----------------
 
@@ -23,11 +23,6 @@ CONFIG -= debug_and_release
 
 # Disable some Microsoft warnings
 DEFINES += _CRT_SECURE_NO_WARNINGS
-
-# Check Qt version
-include($$PWD/check_qt_version.pri)
-# Detect architecture and build mode (ARCH = x86/x64, BUILD_MODE = debug/release)
-include($$PWD/detect_arch_and_build_mode.pri)
 
 # Ignore warning LNK4099: PDB 'vc*.pdb' was not found with...
 QMAKE_LFLAGS += /ignore:4099
@@ -74,18 +69,18 @@ SOURCES += \
     src/rendering/window.cpp \
     src/rendering/shaders/densityfsgenerator/densityfsgenerator.cpp \
     \# OpenCL
-    src/opencl/openclwrapper.cpp \
+    \#src/opencl/openclwrapper.cpp \
     \# Metrics
     src/metric/metricwrapper.cpp \
     src/metric/nmiwrapper.cpp \
     src/metric/ssdwrapper.cpp \
     \
     src/metric/nmicomputingopengl.cpp \
-    src/metric/nmicomputingopencl.cpp \
+    \#src/metric/nmicomputingopencl.cpp \
     src/metric/nmicomputingcpu.cpp \
     src/metric/ssdcomputingopengl.cpp \
-    src/metric/ssdcomputingopencl.cpp \
-    src/metric/ssdcomputingcpu.cpp
+    \#src/metric/ssdcomputingopencl.cpp \
+    src/metric/ssdcomputingcpu.cpp \
 
 HEADERS += \
     \
@@ -112,62 +107,67 @@ HEADERS += \
     include/rendering/window.h \
     include/rendering/densityfsgenerator/densityfsgenerator.h \
     \
-    include/opencl/openclwrapper.h \
+    \#include/opencl/openclwrapper.h \
     \
     include/metric/metricwrapper.h \
     include/metric/nmiwrapper.h \
     include/metric/ssdwrapper.h \
     \
     include/metric/nmicomputingopengl.h \
-    include/metric/nmicomputingopencl.h \
+    \#include/metric/nmicomputingopencl.h \
     include/metric/nmicomputingcpu.h \
     include/metric/ssdcomputingopengl.h \
-    include/metric/ssdcomputingopencl.h \
+    \#include/metric/ssdcomputingopencl.h \
     include/metric/ssdcomputingcpu.h \
     include/ssimrenderer.h \
-    include/ssimrenderer_global.h
+    include/ssimrenderer_global.h \
 
 # Almost shaders and programs
 OTHER_FILES += \
-    src/rendering/shaders/vertexshaderdensity.vert \
-    src/rendering/shaders/geometryshaderdensity.geom \
+    src/rendering/shaders/density.vert \
+    src/rendering/shaders/density.geom \
     \
-    src/rendering/shaders/vertexshadersilhouettes.vert \
-    src/rendering/shaders/geometryshadersilhouettes.geom \
-    src/rendering/shaders/fragmentshadersilhouettes.frag \
+    src/rendering/shaders/silhouettes.vert \
+    src/rendering/shaders/silhouettes.geom \
+    src/rendering/shaders/silhouettes.frag \
     \
-    src/rendering/shaders/vertexshadercomputing.vert \
-    src/rendering/shaders/fragmentshadercomputing.frag \
+    src/rendering/shaders/computing.vert \
+    src/rendering/shaders/computing.frag \
     \
-    src/rendering/shaders/vertexshaderpyramid.vert \
-    src/rendering/shaders/fragmentshaderpyramid.frag \
+    src/rendering/shaders/pyramid.vert \
+    src/rendering/shaders/pyramid.frag \
     \
-    src/rendering/shaders/vertexshaderpolygonal.vert \
-    \#src/rendering/shaders/geometryshaderpolygonal.geom \
-    src/rendering/shaders/fragmentshaderpolygonal.frag \
+    src/rendering/shaders/polygonal.vert \
+    \#src/rendering/shaders/polygonal.geom \
+    src/rendering/shaders/polygonal.frag \
     \
-    src/rendering/shaders/vertexshaderpostprocessing.vert \
-    src/rendering/shaders/vertexshaderpostprocessingsimple.vert \
-    src/rendering/shaders/fragmentshaderpostprocessing.frag \
-    src/rendering/shaders/fragmentshaderpostprocessingsimple.frag \
+    src/rendering/shaders/postprocessing.vert \
+    src/rendering/shaders/postprocessingsimple.vert \
+    src/rendering/shaders/postprocessing.frag \
+    src/rendering/shaders/postprocessingsimple.frag \
     \
-    src/metric/shaders/vertexshaderhistogram.vert \
-    src/metric/shaders/fragmentshaderhistogram.frag \
+    src/metric/shaders/histogram.vert \
+    src/metric/shaders/histogram.frag \
     \
-    src/metric/shaders/vertexshaderjointhistogram.vert \
-    src/metric/shaders/fragmentshaderjointhistogram.frag \
+    src/metric/shaders/jointhistogram.vert \
+    src/metric/shaders/jointhistogram.frag \
     \
-    src/metric/shaders/vertexshaderentropy.vert \
-    src/metric/shaders/fragmentshaderentropy.frag \
+    src/metric/shaders/entropy.vert \
+    src/metric/shaders/entropy.frag \
     \
-    src/metric/shaders/vertexshaderssd.vert \
-    src/metric/shaders/fragmentshaderssd.frag \
+    src/metric/shaders/ssd.vert \
+    src/metric/shaders/ssd.frag \
     \
-    src/metric/programs/ssd.cl
+    \#src/metric/programs/ssd.cl
 
 RESOURCES += \
     resources/shaders.qrc \
-    resources/programs.qrc
+    \#resources/programs.qrc \
+
+# Check Qt version
+include($$PWD/scripts/check_qt_version.pri)
+# Detect architecture and build mode (ARCH = x86/x64, BUILD_MODE = debug/release)
+include($$PWD/scripts/detect_arch_and_build_mode.pri)
 
 # Dependents
 include(ssimrenderer_dependents.pri)
