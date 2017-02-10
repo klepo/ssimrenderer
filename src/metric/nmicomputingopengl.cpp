@@ -270,10 +270,10 @@ void NMIComputingOpenGL::initialize()
     // Program for render histogram
     bool status;
     histogram->program = new QOpenGLShaderProgram();
-    status = histogram->program->addShaderFromSourceFile(QOpenGLShader::Vertex, ":/vertexshaderHistogram");
+    status = histogram->program->addShaderFromSourceFile(QOpenGLShader::Vertex, ":/vsHistogram");
     if (!status && !isloggingEnabled())
         qCritical() << "OpenGL shader error" << histogram->program->log();
-    status = histogram->program->addShaderFromSourceFile(QOpenGLShader::Fragment, ":/fragmentshaderHistogram");
+    status = histogram->program->addShaderFromSourceFile(QOpenGLShader::Fragment, ":/fsHistogram");
     if (!status && !isloggingEnabled())
         qCritical() << "OpenGL shader error" << histogram->program->log();
     status = histogram->program->link();
@@ -282,10 +282,10 @@ void NMIComputingOpenGL::initialize()
 
     // Program for render joint histogram
     jointHistogram->program = new QOpenGLShaderProgram();
-    status = jointHistogram->program->addShaderFromSourceFile(QOpenGLShader::Vertex, ":/vertexshaderJointHistogram");
+    status = jointHistogram->program->addShaderFromSourceFile(QOpenGLShader::Vertex, ":/vsJointHistogram");
     if (!status && !isloggingEnabled())
         qCritical() << "OpenGL shader error" << jointHistogram->program->log();
-    status = jointHistogram->program->addShaderFromSourceFile(QOpenGLShader::Fragment, ":/fragmentshaderJointHistogram");
+    status = jointHistogram->program->addShaderFromSourceFile(QOpenGLShader::Fragment, ":/fsJointHistogram");
     if (!status && !isloggingEnabled())
         qCritical() << "OpenGL shader error" << jointHistogram->program->log();
     status = jointHistogram->program->link();
@@ -294,10 +294,10 @@ void NMIComputingOpenGL::initialize()
 
     // Program for computing entropy
     entropy->program = new QOpenGLShaderProgram();
-    status = entropy->program->addShaderFromSourceFile(QOpenGLShader::Vertex, ":/vertexshaderEntropy");
+    status = entropy->program->addShaderFromSourceFile(QOpenGLShader::Vertex, ":/vsEntropy");
     if (!status && !isloggingEnabled())
         qCritical() << "OpenGL shader error" << entropy->program->log();
-    status = entropy->program->addShaderFromSourceFile(QOpenGLShader::Fragment, ":/fragmentshaderEntropy");
+    status = entropy->program->addShaderFromSourceFile(QOpenGLShader::Fragment, ":/fsEntropy");
     if (!status && !isloggingEnabled())
         qCritical() << "OpenGL shader error" << entropy->program->log();
     status = entropy->program->link();

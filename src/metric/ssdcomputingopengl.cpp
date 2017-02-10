@@ -117,10 +117,10 @@ void SSDComputingOpenGL::initialize()
     // Program for render histogram
     bool status;
     sumOfSquaredDifferences->program = new QOpenGLShaderProgram();
-    status = sumOfSquaredDifferences->program->addShaderFromSourceFile(QOpenGLShader::Vertex, ":/vertexshaderSSD");
+    status = sumOfSquaredDifferences->program->addShaderFromSourceFile(QOpenGLShader::Vertex, ":/vsSSD");
     if (!status && !isloggingEnabled())
         qCritical() << "OpenGL shader error" << sumOfSquaredDifferences->program->log();
-    status = sumOfSquaredDifferences->program->addShaderFromSourceFile(QOpenGLShader::Fragment, ":/fragmentshaderSSD");
+    status = sumOfSquaredDifferences->program->addShaderFromSourceFile(QOpenGLShader::Fragment, ":/fsSSD");
     if (!status && !isloggingEnabled())
         qCritical() << "OpenGL shader error" << sumOfSquaredDifferences->program->log();
     status = sumOfSquaredDifferences->program->link();
