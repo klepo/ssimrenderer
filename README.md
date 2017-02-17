@@ -68,7 +68,7 @@ of the LGPL version 3 open source license.
 The library can be obtained from the following location: 
 <http://www.fit.vutbr.cz/research/prod/?id=458>
 
-Acknowledgement
+Acknowledgment
 ---------------
 This work has been supported by the Technology Agency of the Czech Republic 
 (TA CR, Project Id: TA04011606).
