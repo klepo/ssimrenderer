@@ -8,6 +8,7 @@ uniform sampler2D uSilhouettesTexture;
 uniform sampler2D uPolygonalTexture;
 uniform sampler2D uPyramidTexture;
 uniform bool uDensityEnabled;
+uniform bool uPostprocessingEnabled;
 uniform bool uSilhouettesEnabled;
 uniform bool uPolygonalEnabled;
 uniform bool uPyramidEnabled;
@@ -55,9 +56,10 @@ void main()
     }
 
     if (density.a != 0) {
-        //density = 1 - exp(-density) * uIntensity;
-        //float value = ((color.r - uMin) * 1.0) / (uMax - uMin);
-        outColor = mix(outColor, vec4(1.0f, 1.0f, 1.0f, density.r * uIntensity), density.r * uIntensity);
+        if (uPostprocessingEnabled)
+            outColor = mix(outColor, vec4(1.0f, 1.0f, 1.0f, density.r * uIntensity), density.r * uIntensity);
+        else
+            outColor = vec4(density.r, density.r, density.r, 1);
     }
 
     if (polygonal.a != 0) {

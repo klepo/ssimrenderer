@@ -636,6 +636,33 @@ void MainRenderer::getRenderedRedChannel(float *&data)
 }
 
 /**
+ * @brief Saves float red channel to OpenEXR image format
+ * @param[in] filePath Filename of output png image (filepath)
+ */
+void MainRenderer::saveRedChannelToOpenExr(const QString &filePath)
+{
+    float *data;
+    getRenderedRedChannel(data);
+
+    Imf::Header header(getCropWidth(), getCropHeight());
+    header.channels().insert ("Z", Imf::Channel (Imf::FLOAT));
+
+    Imf::OutputFile file (filePath.toStdString().c_str(), header);
+
+    Imf::FrameBuffer frameBuffer;
+
+    frameBuffer.insert ("Z",
+                        Imf::Slice (Imf::FLOAT,
+                               (char *) data,
+                               sizeof (*data) * 1,
+                               sizeof (*data) * getCropWidth()));
+
+    file.setFrameBuffer (frameBuffer);
+    file.writePixels (getCropHeight());
+}
+
+
+/**
  * @brief Returns current silhouettes image
  * @param[out] image Output array with silhouettes image
  *
@@ -925,6 +952,21 @@ void MainRenderer::enableDensity(bool value)
 }
 
 /**
+ * @brief Enables or disables postprocessing
+ * @param[in] value Boolean flag
+ */
+void MainRenderer::enablePostprocessing(bool value)
+{
+    checkInitAndMakeCurrentContext();
+
+    postprocessingEnabled = value;
+
+    postprocessing->program->bind();
+    postprocessing->program->setUniformValue(postprocessing->uPostprocessingEnabled, postprocessingEnabled);
+    postprocessing->program->release();
+}
+
+/**
  * @brief Enables or disables density rendering
  * @param[in] value Boolean flag
  */
@@ -1014,6 +1056,15 @@ void MainRenderer::enablePolygonalLighting(bool value)
 bool MainRenderer::isDensityEnabled() const
 {
     return densityEnabled;
+}
+
+/**
+ * @brief Is density rendering enabled?
+ * @return True if density rendering is enabled
+ */
+bool MainRenderer::isPostprocessingEnabled() const
+{
+    return postprocessingEnabled;
 }
 
 /**
@@ -2282,6 +2333,8 @@ void MainRenderer::renderPostprocessing()
     //postprocessing->program->setUniformValue(postprocessing->uLeftBottomCorner, QVector2D(0.0f, 0.0f));
     //postprocessing->program->setUniformValue(postprocessing->uRightTopCorner, QVector2D(1.0f, 1.0f));
 
+    postprocessing->program->setUniformValue(postprocessing->uPostprocessingEnabled, postprocessingEnabled);
+
     postprocessing->program->setUniformValue(postprocessing->uPyramidEnabled, pyramidEnabled);
     if (pyramidEnabled) {
         glActiveTexture(GL_TEXTURE0);
@@ -2498,6 +2551,7 @@ bool MainRenderer::event(QEvent *event)
 void MainRenderer::init()
 {
     densityEnabled = true;
+    postprocessingEnabled = true;
     silhouettesEnabled = true;
     pyramidEnabled = true;
     polygonalEnabled = false;
@@ -2612,6 +2666,7 @@ void MainRenderer::getVariablesLocations()
     postprocessing->uSilhouettesEnabled = postprocessing->program->uniformLocation("uSilhouettesEnabled");
     postprocessing->uPolygonalEnabled = postprocessing->program->uniformLocation("uPolygonalEnabled");
     postprocessing->uPyramidEnabled = postprocessing->program->uniformLocation("uPyramidEnabled");
+    postprocessing->uPostprocessingEnabled = postprocessing->program->uniformLocation("uPostprocessingEnabled");
 
     postprocessing->uLeftBottomCorner = postprocessing->program->uniformLocation("uLeftBottomCorner");
     postprocessing->uRightTopCorner = postprocessing->program->uniformLocation("uRightTopCorner");
@@ -2635,6 +2690,7 @@ void MainRenderer::initUniformVariables()
     postprocessing->program->setUniformValue(postprocessing->uSilhouettesEnabled, silhouettesEnabled);
     postprocessing->program->setUniformValue(postprocessing->uPolygonalEnabled, polygonalEnabled);
     postprocessing->program->setUniformValue(postprocessing->uPyramidEnabled, pyramidEnabled);
+    postprocessing->program->setUniformValue(postprocessing->uPostprocessingEnabled, postprocessingEnabled);
     postprocessing->program->setUniformValue(postprocessing->uLeftBottomCorner, QVector2D(0.0f, 0.0f));
     postprocessing->program->setUniformValue(postprocessing->uRightTopCorner, QVector2D(1.0f, 1.0f));
     postprocessing->program->release();
@@ -2846,7 +2902,7 @@ void MainRenderer::resizeTexturesAndRenderbuffer()
     glBindTexture(GL_TEXTURE_2D, 0);
 
     glBindTexture(GL_TEXTURE_2D, toOutput);
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, getCropWidth(), getCropHeight(), 0, GL_RGBA, GL_UNSIGNED_BYTE, 0);
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA32F, getCropWidth(), getCropHeight(), 0, GL_RGBA, GL_UNSIGNED_BYTE, 0);
     glBindTexture(GL_TEXTURE_2D, 0);
 
     glBindRenderbuffer(GL_RENDERBUFFER, rbo);
@@ -2911,7 +2967,7 @@ void MainRenderer::debugTexture(GLuint id)
         }
     }
 
-    delete data;
+    delete[] data;
 }
 
 /**

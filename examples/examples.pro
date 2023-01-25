@@ -11,6 +11,7 @@ TEMPLATE = subdirs
 SUBDIRS += \
     SimpleStatismoModel \
     IntensityShapeModel \
-    ImageMetrics
+    ImageMetrics \
+    DensityImage
 
 CONFIG += ordered

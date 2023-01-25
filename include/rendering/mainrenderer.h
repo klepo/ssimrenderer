@@ -33,6 +33,12 @@
 #include <QOpenGLBuffer>
 #include <QResizeEvent>
 
+#include <OpenEXR/ImfHeader.h>
+#include <OpenEXR/ImfFrameBuffer.h>
+#include <OpenEXR/ImfOutputFile.h>
+#include <OpenEXR/ImfChannelList.h>
+
+
 namespace SSIMRenderer
 {
 /**
@@ -75,6 +81,7 @@ public:
     virtual void getRenderedRedChannel(float *&data) final;
     virtual void getCurrentSilhouettesImage(float *&image) final;
     GLuint getOutputTextureId() const;
+    virtual void saveRedChannelToOpenExr(const QString &filePath) final;
 
     // Rendering parameters
     void setIntensity(double value);
@@ -106,6 +113,7 @@ public:
 
     // Rendering settings
     void enableDensity(bool value);
+    void enablePostprocessing(bool value);
     void enableSilhouettes(bool value);
     void enablePyramid(bool value);
     void enablePolygonal(bool value);
@@ -113,6 +121,7 @@ public:
     void enablePolygonalLighting(bool value);
 
     virtual bool isDensityEnabled() const final;
+    virtual bool isPostprocessingEnabled() const final;
     virtual bool isSilhouettesEnabled() const final;
     virtual bool isPyramidEnabled() const final;
     virtual bool isPolygonalEnabled() const final;
@@ -310,6 +319,7 @@ private:
         GLuint uPyramidTexture;
 
         GLuint uDensityEnabled;
+        GLuint uPostprocessingEnabled;
         GLuint uSilhouettesEnabled;
         GLuint uPolygonalEnabled;
         GLuint uPyramidEnabled;
@@ -391,6 +401,7 @@ private:
     float param;
 
     bool densityEnabled;
+    bool postprocessingEnabled;
     bool silhouettesEnabled;
     bool pyramidEnabled;
     bool polygonalEnabled;
