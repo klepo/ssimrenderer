@@ -21,7 +21,7 @@ CONFIG += c++11
 CONFIG -= debug_and_release
 
 # Disable some Microsoft warnings
-DEFINES += _CRT_SECURE_NO_WARNINGS
+DEFINES += _CRT_SECURE_NO_WARNINGS WIN32 H5_BUILT_AS_DYNAMIC_LIB
 
 # Include widgets - required for QApplication
 QT += widgets

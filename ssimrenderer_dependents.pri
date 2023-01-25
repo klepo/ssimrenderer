@@ -1,19 +1,22 @@
 INCLUDEPATH += \
-    $$PWD/3rdparty/HDF5/include \
-    $$PWD/3rdparty/lm6/include \
+    $$(HDF5_ROOT)/include \
+    $$(LIBMESHB_ROOT)/include \
+    $$(MATIO_ROOT)/include \
+    $$(ZLIB_ROOT)/include \
+    $$(OPENEXR_ROOT)/include \
+    $$(OPENEXR_ROOT)/include/Imath \
     $$PWD/3rdparty/ply/include \
-    $$PWD/3rdparty/matio/include \
-    $$PWD/3rdparty/zlib/include \
     $$PWD/include \
     $$PWD \
 
 LIBS += \
-    -L"$$PWD/3rdparty/HDF5/lib/$$ARCH/$$BUILD_MODE" -lhdf5 \
-    -L"$$PWD/3rdparty/lm6/lib/$$ARCH/$$BUILD_MODE" -llm6 \
+    -L"$$(HDF5_ROOT)/lib" -lhdf5 \
+    -L"$$(LIBMESHB_ROOT)/lib" -lMeshb.7 \
+    -L"$$(MATIO_ROOT)/lib" -llibmatio \
+    -L"$$(ZLIB_ROOT)/lib" -lzlib \
+    -L"$$(OPENEXR_ROOT)/lib" -lOpenEXR-3_2 -lIlmThread-3_2 -lOpenEXRCore-3_2 -lOpenEXRUtil-3_2 -lIex-3_2 -lImath-3_2 \
     -L"$$PWD/3rdparty/ply/lib/$$ARCH/$$BUILD_MODE" -lply \
-    -L"$$PWD/3rdparty/matio/lib/$$ARCH/$$BUILD_MODE" -lmatio \
-    -L"$$PWD/3rdparty/zlib/lib/$$ARCH/$$BUILD_MODE" -lzlibstatic \
 
-#contains(DEFINES, OPENCL) {
-#    include("$$PWD/../helper_scripts/opencl.pri")
-#}
+contains(OPENCL, true) {
+    include("$$PWD/../opencl.pri")
+}

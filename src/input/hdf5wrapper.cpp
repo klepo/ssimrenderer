@@ -27,7 +27,7 @@ namespace SSIMRenderer
  */
 HDF5Wrapper::HDF5Wrapper(const QString &filename)
 {
-    file = H5Fopen(filename.toStdString().c_str(), H5F_ACC_RDONLY, 0);
+    file = H5Fopen(filename.toStdString().c_str(), H5F_ACC_RDONLY, H5P_DEFAULT);
     if (file < 0) {
         throw std::runtime_error(std::string("Error opening HDF5 file ") + filename.toStdString());
     }

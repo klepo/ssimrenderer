@@ -24,7 +24,10 @@
 
 #include "mesh.h"
 
-#include <lm6.h>
+extern "C"
+{
+    #include <libmeshb7.h>
+}
 
 namespace SSIMRenderer
 {
