@@ -22,6 +22,7 @@
 #define SSIMRENDERER_GLOBAL_H
 
 #include <QtCore/qglobal.h>
+#include <stdexcept>
 
 #if defined(SHARED_SSIMRENDERER_LIBRARY)
 #   if defined(SHARED_LIBRARY_EXPORT)
