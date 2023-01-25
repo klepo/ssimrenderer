@@ -3,7 +3,7 @@
  * @author      Petr Kleparnik, VUT FIT Brno, ikleparnik@fit.vutbr.cz
  * @author      Ondrej Klima, VUT FIT Brno, iklima@fit.vutbr.cz
  * @version     1.0
- * @date        4 December 2015
+ * @date        4 December 2015, update 25 January 2023
  *
  * @brief       This is include file for shared library export.
  *
