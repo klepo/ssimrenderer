@@ -58,6 +58,14 @@ at the included examples:
  * IntensityShapeModel.cpp
    - example of rendering virtual X-Ray images from a statistical 
      shape and intensity model
+     
+ * DensityImage.cpp
+   - example shows how to render a density image containing float values. The resulting image is stored in OpenEXR format. The example allows to render images in physical units.
+   <figure>
+    <img src="docs/exr_screen.jpg"
+         alt="Screen shot of a density image in the OpenEXR viewer.">
+    <figcaption>Screen shot of a density image in the OpenEXR viewer.</figcaption>
+</figure>
 
 There is also a full reference manual available.
 
