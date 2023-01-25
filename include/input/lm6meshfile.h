@@ -52,7 +52,7 @@ public:
     Lm6MeshFile &operator=(const Lm6MeshFile &lm6MeshFile);
 
 private:
-    int meshIndex;
+    int64_t meshIndex;
     int version;
     int dimension;
 };
