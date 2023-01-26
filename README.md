@@ -39,7 +39,7 @@ The project requires following toolkits and libraries installed:
  * libmeshb7 (https://github.com/LoicMarechal/libMeshb)
  * matio (https://github.com/tbeu/matio)
  * zlib
- * OpenEXR (https://github.com/afichet/openexr-viewer)
+ * OpenEXR (https://github.com/AcademySoftwareFoundation/openexr)
  
 Envriroment variables must be set according to ssimrenderer_dependents.pri file.
     
