@@ -72,7 +72,7 @@ at the included examples:
    <br /><figure>
     <img src="docs/exr_screen.jpg"
          alt="Screen shot of a density image in the OpenEXR viewer.">
-    <figcaption>Screen shot of a density image in the OpenEXR viewer.</figcaption>
+    <figcaption>Screen shot of a density image in the OpenEXR viewer (<https://github.com/afichet/openexr-viewer>).</figcaption>
 </figure><br />
 
 There is also a full reference manual available.
