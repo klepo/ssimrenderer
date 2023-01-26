@@ -16,10 +16,12 @@ with simple polygonal statistical shape models (SSM) stored in Statismo file
 format.
 
 Version from 17 December 2015.
+Updated on 26 January 2023.
 
 Features
 --------
  * Rendering of virtual X-Ray images from SSIM.  
+ * Rendering of density images with float values from SSIM.
  * Rendering of surface images from SSIM/SSM.  
  * Rendering of silhouettes of SSIM/SSM.      
  * Mirroring of the shape models.
@@ -28,17 +30,18 @@ Features
  * Computation of OpenGL and OpenCL accelerated image similarity metrics.
  * etc.      
 
-Prerequisites
+Installation
 -------------
-Qt Toolkit in version 5.x or later is required. Other required librarires are 
-redistributed within the SSIM Renderer package. The libraries are redistributed 
-in both source and binary form. Following 3rd party libraries are included:
+The project requires following toolkits and libraries installed:
 
+ * Qt 5 or later 
  * HDF5
- * libmesh6
- * matio
- * RPly library   
+ * libmeshb7 (https://github.com/LoicMarechal/libMeshb)
+ * matio (https://github.com/tbeu/matio)
  * zlib
+ * OpenEXR (https://github.com/afichet/openexr-viewer)
+ 
+Envriroment variables must be set according to ssimrenderer_dependents.pri file.
     
 The library has been developped for usage with Windows 7 or later.
 
@@ -81,6 +84,14 @@ of the LGPL version 3 open source license.
 The library can be obtained from the following location: 
 <http://www.fit.vutbr.cz/research/prod/?id=458>
 
+Citation 
+---------------
+If you use the library, please cite the following research: 
+
+Ondrej Klima, Petr Kleparnik, Michal Spanel, and Pavel Zemcik "Intensity-based femoral atlas 2D/3D registration using Levenberg-Marquardt optimisation", Proc. SPIE 9788, Medical Imaging 2016: Biomedical Applications in Molecular, Structural, and Functional Imaging, 97880F (29 March 2016); https://doi.org/10.1117/12.2216529
+
+<a href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/9788/97880F/Intensity-based-femoral-atlas-2D-3D-registration-using-Levenberg-Marquardt/10.1117/12.2216529.full">Article fulltext in SPIE Digital Library</a>
+
 Acknowledgment
 ---------------
 This work has been supported by the Technology Agency of the Czech Republic 
@@ -90,7 +101,7 @@ This work has been supported by the Technology Agency of the Czech Republic
 Authors
 -------
  * Petr Kleparnik   (<ikleparnik@fit.vutbr.cz>)
- * Ondrej Klima     (<iklima@fit.vutbr.cz>)
+ * Ondrej Klima     (<iklima@fit.vutbr.cz>, ORCID: 0000-0001-9295-065X, <https://www.fit.vut.cz/person/iklima/.en>, <https://www.researchgate.net/profile/Ondrej-Klima-4>)
  * Michal Spanel    (<spanel@fit.vutbr.cz>)
  * Pavel Zemcik     (<zemcik@stud.fit.vutbr.cz>)
 
