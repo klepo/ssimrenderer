@@ -68,11 +68,11 @@ at the included examples:
 </figure><br />
      
  * DensityImage.cpp
-   - example shows how to render a density image containing float values. The resulting image is stored in OpenEXR format. The example allows to render images in physical units.   
+   - example shows how to render a density image containing float values. The resulting image is stored in OpenEXR format (simple viewer is available at <https://github.com/afichet/openexr-viewer>). The example allows to render images in physical units.  
    <br /><figure>
     <img src="docs/exr_screen.jpg"
          alt="Screen shot of a density image in the OpenEXR viewer.">
-    <figcaption>Screen shot of a density image in the OpenEXR viewer (<https://github.com/afichet/openexr-viewer>).</figcaption>
+    <figcaption>Screen shot of a density image in the OpenEXR viewer.</figcaption>
 </figure><br />
 
 There is also a full reference manual available.
